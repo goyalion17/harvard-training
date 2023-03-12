@@ -4,14 +4,23 @@ const hello = document.querySelector('h1')
 const count = document.querySelector('h2')
 const form = document.querySelector('.form')
 const names = document.querySelector('#name');
+const select = document.querySelector('.select');
+const form1 = document.querySelector('#form1')
+const task = document.querySelector('#task');
+const tasks = document.querySelector('#tasks');
 
-color.forEach(item => {
+
+/* color.forEach(item => {
     item.addEventListener('click', () => {
         hello.style.color = item.dataset.color
     })
-})
+}) */
 
-let counter = 0;
+/* select.onchange = function () {
+    hello.style.color = this.value
+}
+ */
+/* let counter = 0;
 
 btn.addEventListener('click', () => {  
     counter++
@@ -22,9 +31,17 @@ btn.addEventListener('click', () => {
     }
     
     hello.innerHTML === "Hello" ? hello.innerHTML = 'Goodbye' : hello.innerHTML = 'Hello'
-})
+}) */
 
-form.addEventListener('submit', () => {
-    let userName = names.value
-    alert(`Hello, ${userName}!`)
-})
+
+// TASKS
+form1.onsubmit = () => {
+    const value = task.value
+
+    const li = document.createElement('li');
+    li.innerHTML = value;
+
+    tasks.append(li)
+    
+    return false;
+}
